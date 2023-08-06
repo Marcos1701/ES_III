@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.Vector;
 
 public class App {
@@ -15,6 +14,7 @@ public class App {
     }
 
     public static void menu_de_alteracao_livro() {
+
         System.out.println("------- Alterar Livro --------");
         System.out.println("\nSelecione uma opção:");
         System.out.println("1 - Alterar titulo");
@@ -40,8 +40,10 @@ public class App {
             invalid_option = false;
             try {
                 opcao = Integer.parseInt(System.console().readLine("=> "));
-            } catch (NumberFormatException e) {
-                invalid_option = true;
+            } catch (Exception e) {
+                if (e instanceof NumberFormatException) {
+                    invalid_option = true;
+                }
             }
         }
 
@@ -67,9 +69,11 @@ public class App {
         boolean invalid_option = false;
         int value = 0;
         try {
-            value = Integer.parseInt(System.console().readLine());
-        } catch (NumberFormatException e) {
-            invalid_option = true;
+            value = Integer.parseInt(System.console().readLine("=> "));
+        } catch (Exception e) {
+            if (e instanceof NumberFormatException) {
+                invalid_option = true;
+            }
         }
 
         while (invalid_option) {
@@ -328,6 +332,7 @@ public class App {
                 default:
                     break;
             }
+
             menu();
             System.out.println("Digite a opção desejada: ");
             opcao = getValidOption(0, 5);
