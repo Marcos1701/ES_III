@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Vector;
 
 public class App {
@@ -5,11 +6,15 @@ public class App {
     public static void menu() {
         System.out.println("----------------- Menu -----------------");
         System.out.println("\nSelecione uma opção:");
-        System.out.println("1 - Adicionar livro");
-        System.out.println("2 - Remover livro");
-        System.out.println("3 - Listar livros");
-        System.out.println("4 - Alterar nome");
-        System.out.println("5 - Alterar livro");
+        System.out.println("1 - Adicionar biblioteca");
+        System.out.println("2 - Adicionar livro");
+        System.out.println("3 - Acessar biblioteca");
+        System.out.println("4 - Remover biblioteca");
+        System.out.println("5 - Remover livro");
+        System.out.println("6 - Listar bibliotecas");
+        System.out.println("7 - Listar livros");
+        System.out.println("8 - Alterar biblioteca");
+        System.out.println("9 - Alterar livro");
         System.out.println("\n\n0 - Sair");
     }
 
@@ -22,6 +27,42 @@ public class App {
         System.out.println("3 - Alterar editora");
         System.out.println("4 - Alterar ano");
         System.out.println("5 - Alterar tudo");
+        System.out.println("\n\n0 - Sair");
+    }
+
+    public static void menu_de_alteracao_biblioteca() {
+
+        System.out.println("------- Alterar Biblioteca --------");
+        System.out.println("\nSelecione uma opção:");
+        System.out.println("1 - Alterar nome");
+        System.out.println("2 - alterar livros");
+        System.out.println("\n\n0 - Sair");
+    }
+
+    public static void menu_de_acesso_biblioteca() {
+
+        System.out.println("------- Acessar Biblioteca --------");
+        System.out.println("\nSelecione uma opção:");
+        System.out.println("1 - Acessar biblioteca por nome");
+        System.out.println("2 - Acessar biblioteca por id");
+        System.out.println("\n\n0 - Sair");
+    }
+
+    public static void menu_de_remocao_livro() {
+
+        System.out.println("------- Remover Livro --------");
+        System.out.println("\nSelecione uma opção:");
+        System.out.println("1 - Remover livro por titulo");
+        System.out.println("2 - Remover livro por id");
+        System.out.println("\n\n0 - Sair");
+    }
+
+    public static void menu_de_remocao_biblioteca() {
+
+        System.out.println("------- Remover Biblioteca --------");
+        System.out.println("\nSelecione uma opção:");
+        System.out.println("1 - Remover biblioteca por nome");
+        System.out.println("2 - Remover biblioteca por id");
         System.out.println("\n\n0 - Sair");
     }
 
@@ -91,17 +132,69 @@ public class App {
     }
 
     public static void main(String[] args) throws Exception {
-        class Livro {
+
+        abstract class Pessoa {
+
+            private String nome;
+
+            public Pessoa(String nome) {
+                this.nome = nome;
+            }
+
+            public String getNome() {
+                return this.nome;
+            }
+
+            public void setNome(String nome) {
+                this.nome = nome;
+            }
+        }
+
+        class autor extends Pessoa {
+
+            private int id;
+
+            public autor(int id, String nome) {
+                super(nome);
+                this.id = id;
+            }
+
+            public int getId() {
+                return this.id;
+            }
+
+        }
+        interface Ilivro {
+            public int getId();
+
+            public String getTitulo();
+
+            public autor getAutor();
+
+            public String getEditora();
+
+            public int getAno();
+
+            public void setTitulo(String titulo);
+
+            public void setAutor(autor autor);
+
+            public void setEditora(String editora);
+
+            public void setAno(int ano);
+        }
+
+        class Livro implements Ilivro {
             int id;
             String titulo;
-            String autor;
+            autor autor;
             String editora;
             int ano;
 
-            public Livro(int id, String titulo, String autor, String editora, int ano) {
+            public Livro(int id, autor Autor, String titulo, String editora, int ano) {
                 this.id = id;
                 this.titulo = titulo;
-                this.autor = autor;
+                this.autor = Autor;
                 this.editora = editora;
                 this.ano = ano;
             }
@@ -114,7 +207,7 @@ public class App {
                 return this.titulo;
             }
 
-            public String getAutor() {
+            public autor getAutor() {
                 return this.autor;
             }
 
@@ -130,8 +223,8 @@ public class App {
                 this.titulo = titulo;
             }
 
-            public void setAutor(String autor) {
-                this.autor = autor;
+            public void setAutor(autor autorLivro) {
+                this.autor = autorLivro;
             }
 
             public void setEditora(String editora) {
@@ -149,42 +242,65 @@ public class App {
             }
         }
 
-        class Pessoa {
+        interface IBiblioteca {
+            public int getId();
 
+            public String getNome();
+
+            public Vector<Livro> getLivros();
+
+            public void setNome(String nome);
+
+            public void setLivros(Vector<Livro> livros);
+
+            public void addLivro(String titulo, autor autor, String editora, int ano);
+
+            public void removeLivro(int idLivro);
+
+            public void removeLivro(String titulo);
+        }
+
+        class Biblioteca implements IBiblioteca {
+            int id;
             String nome;
             Vector<Livro> livros = new Vector<Livro>();
-            int id = 1;
+            int idLivro = 1;
 
-            public Pessoa(String nome) {
+            public Biblioteca(int id, String nome) {
+                this.id = id;
                 this.nome = nome;
             }
 
-            // public String getNome() {
-            // return this.nome;
-            // }
-
-            // public Vector<Livro> getLivros() {
-            // return this.livros;
-            // }
-
-            public void addLivro(String titulo, String autor, String editora, int ano) {
-                Livro livro = new Livro(this.id, titulo, autor, editora, ano);
-                this.livros.add(livro);
-                this.id++;
+            public int getId() {
+                return this.id;
             }
 
-            public void removeLivro(int idLivro) {
+            public String getNome() {
+                return this.nome;
+            }
+
+            public Vector<Livro> getLivros() {
+                return this.livros;
+            }
+
+            public void setNome(String nome) {
+                this.nome = nome;
+            }
+
+            public void setLivros(Vector<Livro> livros) {
+                this.livros = livros;
+            }
+
+            private boolean livroExiste(String titulo) {
                 for (Livro l : this.livros) {
-                    if (l.getId() == idLivro) {
-                        this.livros.remove(l);
-                        System.out.println("Livro removido com sucesso");
-                        return;
+                    if (l.getTitulo().equals(titulo)) {
+                        return true;
                     }
                 }
-                System.out.println("Livro não encontrado");
+                return false;
             }
 
-            public boolean conferenciaLivro(int idLivro) {
+            private boolean livroExiste(int idLivro) {
                 for (Livro l : this.livros) {
                     if (l.getId() == idLivro) {
                         return true;
@@ -193,28 +309,54 @@ public class App {
                 return false;
             }
 
-            public void listaLivros() {
-                if (this.livros.size() == 0) {
-                    System.out.println("\nNenhum livro cadastrado\n");
+            public void addLivro(String titulo, autor autor, String editora, int ano) {
+                if (livroExiste(titulo)) {
+                    System.out.println("Livro já existe");
                     return;
                 }
-                System.out.println("\nLivros de " + this.nome + ":");
-                for (Livro l : this.livros) {
-                    System.out.println("\n" + l.toString() + "\n");
-                }
-                System.console().readLine("Pressione enter para continuar");
+                Livro livro = new Livro(this.idLivro, autor, titulo, editora, ano);
+                this.livros.add(livro);
+                this.idLivro++;
+                System.out.println("Livro adicionado com sucesso");
             }
 
-            public Livro getLivro(int idLivro) {
+            public void removeLivro(int idLivro) {
+
+                boolean livroExiste = false;
                 for (Livro l : this.livros) {
                     if (l.getId() == idLivro) {
-                        return l;
+                        this.livros.remove(l);
+                        System.out.println("Livro removido com sucesso");
+                        livroExiste = true;
+                        break;
                     }
                 }
-                return null;
+                if (!livroExiste) {
+                    System.out.println("Livro não existe");
+                }
             }
 
+            public void removeLivro(String titulo) {
+                boolean livroExiste = false;
+                for (Livro l : this.livros) {
+                    if (l.getTitulo().equals(titulo)) {
+                        livroExiste = true;
+                        this.livros.remove(l);
+                        System.out.println("Livro removido com sucesso");
+                        break;
+                    }
+                }
+                if (!livroExiste) {
+                    System.out.println("Livro não existe");
+                }
+            }
+
+            public String toString() {
+                return "ID: " + this.id + "\nNome: " + this.nome + "\nLivros: " + this.livros;
+            }
         }
+
+        Vector<Biblioteca> bibliotecas = new Vector<Biblioteca>();
 
         System.out.println("Seja bem vindo ao sistema de biblioteca");
         System.out.println("Digite o seu nome: ");
