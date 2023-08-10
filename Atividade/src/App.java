@@ -56,9 +56,9 @@ public class App {
                     idLivro2 = utils.getValidInt();
                     // }
 
-                    if (pessoa.conferenciaLivro(idLivro2)) {
-                        break;
-                    }
+                    // if (pessoa.conferenciaLivro(idLivro2)) {
+                    // break;
+                    // }
 
                     Menu.menu_de_alteracao_livro();
                     System.out.println("Digite a opção desejada: ");
@@ -67,47 +67,47 @@ public class App {
 
                     switch (opcao2) {
                         case 1:
-                            System.out.println("Titulo atual: " + livro.getTitulo());
+                            // System.out.println("Titulo atual: " + livro.getTitulo());
                             System.out.println("Digite o novo titulo: ");
                             String novoTitulo = utils.getValidString();
-                            livro.setTitulo(novoTitulo);
+                            // livro.setTitulo(novoTitulo);
                             break;
                         case 2:
-                            System.out.println("Autor atual: " + livro.getAutor());
+                            // System.out.println("Autor atual: " + livro.getAutor());
                             System.out.println("Digite o novo autor: ");
                             String novoAutor = utils.getValidString();
                             // livro.setAutor(novoAutor);
                             break;
                         case 3:
-                            System.out.println("Editora atual: " + livro.getEditora());
+                            // System.out.println("Editora atual: " + livro.getEditora());
                             System.out.println("Digite a nova editora: ");
                             String novaEditora = utils.getValidString();
-                            livro.setEditora(novaEditora);
+                            // livro.setEditora(novaEditora);
                             break;
                         case 4:
-                            System.out.println("Ano atual: " + livro.getAno());
+                            // System.out.println("Ano atual: " + livro.getAno());
                             System.out.println("Digite o novo ano: ");
                             int novoAno = utils.getValidInt();
-                            livro.setAno(novoAno);
+                            // livro.setAno(novoAno);
                             break;
 
                         case 5:
-                            System.out.println("Titulo atual: " + livro.getTitulo());
+                            // System.out.println("Titulo atual: " + livro.getTitulo());
                             System.out.println("Digite o novo titulo: ");
                             String novoTitulo2 = utils.getValidString();
-                            livro.setTitulo(novoTitulo2);
-                            System.out.println("Autor atual: " + livro.getAutor() + "\n");
+                            // livro.setTitulo(novoTitulo2);
+                            // System.out.println("Autor atual: " + livro.getAutor() + "\n");
                             System.out.println("Digite o novo autor: ");
                             String novoAutor2 = utils.getValidString();
                             // livro.setAutor(novoAutor2);
-                            System.out.println("Editora atual: " + livro.getEditora());
+                            // System.out.println("Editora atual: " + livro.getEditora());
                             System.out.println("Digite a nova editora: ");
                             String novaEditora2 = utils.getValidString();
-                            livro.setEditora(novaEditora2);
-                            System.out.println("Ano atual: " + livro.getAno());
+                            // livro.setEditora(novaEditora2);
+                            // System.out.println("Ano atual: " + livro.getAno());
                             System.out.println("Digite o novo ano: ");
                             int novoAno2 = utils.getValidInt();
-                            livro.setAno(novoAno2);
+                            // livro.setAno(novoAno2);
                             break;
 
                         default:
