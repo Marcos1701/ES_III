@@ -120,6 +120,42 @@ public class utils {
         }
     }
 
+    public static Livro getLivro(int id, Vector<Livro> livros){
+        for(Livro l : livros){
+            if(l.getId() == id){
+                return l;
+            }
+        }
+        return null;
+    }
+
+    public static boolean LivroExistente(int id_Livro, Vector<Livro> livros){
+        for(Livro l : livros){
+            if(l.getId() == id_Livro){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void printBibliotecas(Vector<Biblioteca> bibliotecas){
+        for(Biblioteca b : bibliotecas){
+            System.out.println(b.toString());
+            System.out.println("\nLivros: ");
+            printLivros(b.getLivros());
+        }
+    }
+
+    public static void printbiblioteca(Biblioteca b){
+        if(!(b instanceof Biblioteca)){
+            System.out.println("Biblioteca inválida");
+            return;
+        }
+        System.out.println(b.toString());
+        System.out.println("\nLivros: ");
+        printLivros(b.getLivros());
+    }
+
     public static void printLivros(Vector<Livro> livros) {
         for (Livro livro : livros) {
             System.out.println(livro.getTitulo());
