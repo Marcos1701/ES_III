@@ -53,15 +53,64 @@ public class App {
                     // Limpar console
                     utils.clearConsole(); // Não sei se funciona em todos os sistemas operacionais...
                     break;
-                case 3:
-                    Menu.menu_de_acesso_biblioteca();
-                    System.out.println("Digite a opção desejada: ");
-                    int opcao2 = utils.getValidOption(0, 2);
+                case 3: // Acessar Biblioteca
+                    
+                    utils.printBibliotecas(bibliotecas);
+                    System.out.println("Digite o id da biblioteca: ");
+                    int id_B = utils.getValidInt();
+                    Biblioteca bibliotecaSelecionada = null;
 
-                    switch (opcao2) {
-                        case 1: // acessar via nome
+                    for(Biblioteca b : bibliotecas){
+                        if(b.getId() == id_B){
+                            bibliotecaSelecionada = b;
+                            break;
+                        }
                     }
-                    break;
+
+                    if(bibliotecaSelecionada == null){
+                        System.out.println("Ops, nenhuma biblioteca foi encontrada..");
+                        break;
+                    }
+                    Menu.menu_biblioteca();
+                    int op = utils.getValidOption(0, 5);
+
+                    while(op != 0){
+                        if(op == 1){
+                            utils.printbiblioteca(bibliotecaSelecionada);
+                        }else if(op == 2){
+                            System.out.println("\nLivros: ");
+                            utils.printLivros(bibliotecaSelecionada.getLivros());
+                        }else if(op == 3){
+                            System.out.println("\nDigite o id do Livro: ");
+                            int id_L = utils.getValidInt();
+                            bibliotecaSelecionada.removeLivro(id_L);
+                        }else if(op == 4){
+                            System.out.println("Acervo de Livros: ");
+                            utils.printLivros(livros);
+                            System.out.println("Digite o id do Livro: ")
+                            int id_Livro = utils.getValidInt();
+
+                            if(bibliotecaSelecionada.livroExiste(id_Livro)){
+                                System.out.println("Ops, este Livro já está presente na biblioteca selecionada..");
+                                continue;
+                            }
+
+                            Livro LivroSelecionado = utils.getLivro(id_Livro, livros);
+                            biblioteca.addLivro(titulo, autor, editora, ano);
+                        }else if(op == 5){
+                            Menu.menu_de_alteracao_biblioteca();
+                            int op2 = utils.getValidOption(0, 1);
+
+                            if(op == 1){
+                                System.out.println("Digite o novo nome: ");
+                                String new_name = utils.getValidString();
+                                bibliotecaSelecionada.setNome(new_name);
+
+                                System.out.println("Nome alterado com sucesso!!");
+                            }
+
+                        }
+                    }
 
                 case 4:
                     break;
