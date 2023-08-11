@@ -156,6 +156,28 @@ public class utils {
         printLivros(b.getLivros());
     }
 
+    public static void removeBiblioteca(int id, Vector<Biblioteca> bibliotecas){
+        for(int i = 0; i < bibliotecas.size(); i++){
+            if(bibliotecas.get(i).getId() == id){
+                bibliotecas.remove(i);
+                System.out.println("\nBiblioteca removida com sucesso");
+                return;
+            }
+        }
+        System.out.println("\nBiblioteca não encontrada...");
+    }
+
+    public static void removeLivro(int id, Vector<Livro> Livros){
+        for(int i = 0; i < Livros.size(); i++){
+            if(Livros.get(i).getId() == id){
+                Livros.remove(i);
+                System.out.println("\nLivro removido com sucesso");
+                return;
+            }
+        }
+        System.out.println("\nLivro não encontrado...");
+    }
+
     public static void printLivros(Vector<Livro> livros) {
         for (Livro livro : livros) {
             System.out.println(livro.getTitulo());
@@ -165,6 +187,15 @@ public class utils {
     public static Livro confereLivro(String titulo, Vector<Livro> livros) {
         for (Livro livro : livros) {
             if (livro.getTitulo().equals(titulo)) {
+                return livro;
+            }
+        }
+        return null;
+    }
+
+    public static Livro confereLivro(int id, Vector<Livro> livros) {
+        for (Livro livro : livros) {
+            if (livro.getId() == id) {
                 return livro;
             }
         }

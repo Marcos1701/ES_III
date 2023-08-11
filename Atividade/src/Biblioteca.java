@@ -119,6 +119,30 @@ class Biblioteca implements IBiblioteca {
         }
     }
 
+    public void alterarLivro(int id,String titulo , autor autor, String editora, int ano){
+        int index = -1;
+        for (int i = 0; i < this.livros.size(); i++) {
+            if(this.livros.elementAt(i).getId() == id){
+                index = i;
+            }
+        }
+        if(index == -1){System.out.println("Livro não encontrado.");}
+
+        if(titulo != null){
+            this.livros.elementAt(index).setTitulo(titulo);
+        }
+        if(autor != null){
+            this.livros.elementAt(index).setAutor(autor);
+        }
+        if(editora != null){
+            this.livros.elementAt(index).setEditora(editora);
+        }
+        if(ano != -1 && ano > 0 && ano <= utils.getYear()){
+            this.livros.elementAt(index).setAno(ano);
+        }
+    }
+
+
     public String toString() {
         return "ID: " + this.id + "\nNome: " + this.nome;
     }
