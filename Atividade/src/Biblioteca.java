@@ -59,7 +59,7 @@ class Biblioteca implements IBiblioteca {
         return false;
     }
 
-    private boolean livroExiste(int idLivro) {
+    public boolean livroExiste(int idLivro) {
         for (Livro l : this.livros) {
             if (l.getId() == idLivro) {
                 return true;
@@ -76,6 +76,15 @@ class Biblioteca implements IBiblioteca {
         Livro livro = new Livro(this.idLivro, autor, titulo, editora, ano);
         this.livros.add(livro);
         this.idLivro++;
+        System.out.println("Livro adicionado com sucesso");
+    }
+
+    public void addLivro(Livro livro) {
+        if (livroExiste(livro.getId())) {
+            System.out.println("Livro já existe");
+            return;
+        }
+        this.livros.add(livro);
         System.out.println("Livro adicionado com sucesso");
     }
 
@@ -111,6 +120,6 @@ class Biblioteca implements IBiblioteca {
     }
 
     public String toString() {
-        return "ID: " + this.id + "\nNome: " + this.nome + "\nLivros: " + this.livros;
+        return "ID: " + this.id + "\nNome: " + this.nome;
     }
 }
