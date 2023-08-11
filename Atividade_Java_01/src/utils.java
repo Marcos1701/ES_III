@@ -1,3 +1,10 @@
+/*
+ Membros: 
+- Marcos Eduardo
+- Gabriel Amaral
+- Daniel Luca
+ */
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Vector;
@@ -120,34 +127,34 @@ public class utils {
         }
     }
 
-    public static Livro getLivro(int id, Vector<Livro> livros){
-        for(Livro l : livros){
-            if(l.getId() == id){
+    public static Livro getLivro(int id, Vector<Livro> livros) {
+        for (Livro l : livros) {
+            if (l.getId() == id) {
                 return l;
             }
         }
         return null;
     }
 
-    public static boolean LivroExistente(int id_Livro, Vector<Livro> livros){
-        for(Livro l : livros){
-            if(l.getId() == id_Livro){
+    public static boolean LivroExistente(int id_Livro, Vector<Livro> livros) {
+        for (Livro l : livros) {
+            if (l.getId() == id_Livro) {
                 return true;
             }
         }
         return false;
     }
 
-    public static void printBibliotecas(Vector<Biblioteca> bibliotecas){
-        for(Biblioteca b : bibliotecas){
+    public static void printBibliotecas(Vector<Biblioteca> bibliotecas) {
+        for (Biblioteca b : bibliotecas) {
             System.out.println(b.toString());
             System.out.println("\nLivros: ");
             printLivros(b.getLivros());
         }
     }
 
-    public static void printbiblioteca(Biblioteca b){
-        if(!(b instanceof Biblioteca)){
+    public static void printbiblioteca(Biblioteca b) {
+        if (!(b instanceof Biblioteca)) {
             System.out.println("Biblioteca inválida");
             return;
         }
@@ -156,9 +163,9 @@ public class utils {
         printLivros(b.getLivros());
     }
 
-    public static void removeBiblioteca(int id, Vector<Biblioteca> bibliotecas){
-        for(int i = 0; i < bibliotecas.size(); i++){
-            if(bibliotecas.get(i).getId() == id){
+    public static void removeBiblioteca(int id, Vector<Biblioteca> bibliotecas) {
+        for (int i = 0; i < bibliotecas.size(); i++) {
+            if (bibliotecas.get(i).getId() == id) {
                 bibliotecas.remove(i);
                 System.out.println("\nBiblioteca removida com sucesso");
                 return;
@@ -167,9 +174,9 @@ public class utils {
         System.out.println("\nBiblioteca não encontrada...");
     }
 
-    public static void removeLivro(int id, Vector<Livro> Livros){
-        for(int i = 0; i < Livros.size(); i++){
-            if(Livros.get(i).getId() == id){
+    public static void removeLivro(int id, Vector<Livro> Livros) {
+        for (int i = 0; i < Livros.size(); i++) {
+            if (Livros.get(i).getId() == id) {
                 Livros.remove(i);
                 System.out.println("\nLivro removido com sucesso");
                 return;

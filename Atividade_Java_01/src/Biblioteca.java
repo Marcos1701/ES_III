@@ -1,3 +1,9 @@
+/*
+ Membros: 
+- Marcos Eduardo
+- Gabriel Amaral
+- Daniel Luca
+ */
 import java.util.Vector;
 
 interface IBiblioteca {

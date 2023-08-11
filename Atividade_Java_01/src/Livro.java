@@ -1,4 +1,9 @@
-
+/*
+ Membros: 
+- Marcos Eduardo
+- Gabriel Amaral
+- Daniel Luca
+ */
 abstract class Pessoa {
 
     private String nome;

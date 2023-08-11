@@ -1,7 +1,19 @@
-## Getting Started
+## Atividade .
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+### Descrição
+   
+    Cadastro 1-N em uma linguagem diferente de JavaScript/Typescript,
+    Implemente e enfatize na apresentação os conceitos:
+        . Encapsulamento;
+        . Herança ou composição;
+        .Classes abstratas ou Interfaces;
+        .Polimorfismo.
+    e implemente, ainda que de forma simples, testes unitários.
 
+### Membro(s)
+- Marcos Eduardo
+- Gabriel Amaral
+- Daniel Luca
 ## Folder Structure
 
 The workspace contains two folders by default, where:
