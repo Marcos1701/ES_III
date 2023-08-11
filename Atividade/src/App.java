@@ -1,3 +1,4 @@
+import java.sql.Date;
 import java.util.List;
 import java.util.Vector;
 
@@ -6,114 +7,67 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         Vector<Biblioteca> bibliotecas = new Vector<Biblioteca>();
-
-        System.out.println("Seja bem vindo ao sistema de biblioteca");
-        System.out.println("Digite o seu nome: ");
-        String nome = System.console().readLine("=> ");
+        Vector<Livro> livros = new Vector<Livro>();
+        Vector<autor> autores = new Vector<autor>();
+        int id_a = 1;
+        System.out.println("Olá, seja bem vindo...");
 
         Menu.menu();
 
         System.out.println("Digite a opção desejada: ");
-        int opcao = utils.getValidOption(0, 5);
+        int opcao = utils.getValidOption(0, 9);
+        int id = 1;
 
         while (opcao != 0) {
             switch (opcao) {
-                case 1:
+                case 1: // Cadastrar biblioteca
+                    System.out.println("Digite o nome da biblioteca: ");
+                    String nome = utils.getValidString();
+                    Biblioteca biblioteca = new Biblioteca(id, nome);
+                    id++;
+                    bibliotecas.add(biblioteca);
+                    System.out.println("Biblioteca cadastrada com sucesso!");
+                    // Limpar console
+                    utils.clearConsole(); // Não sei se funciona em todos os sistemas operacionais...
+
+                    break;
+                case 2: // Cadastrar livro
                     System.out.println("Digite o titulo do livro: ");
                     String titulo = utils.getValidString();
                     System.out.println("Digite o autor do livro: ");
-                    String autor = utils.getValidString();
+                    String Nome_autor = utils.getValidString();
+                    autor autor = utils.confereAutor(Nome_autor, autores);
+                    if (autor == null) {
+                        autor = new autor(id_a, Nome_autor);
+                        autores.add(autor);
+                        id_a++;
+                    }
                     System.out.println("Digite a editora do livro: ");
                     String editora = utils.getValidString();
                     System.out.println("Digite o ano do livro: ");
-                    int ano = utils.getValidInt();
-                    break;
-                case 2:
-                    System.out.println("Digite o id do livro: ");
-                    int idLivro = utils.getValidInt();
+                    int ano = utils.getYear();
+                    Livro livro = new Livro(id, autor, titulo, editora, ano);
+                    id++;
+                    livros.add(livro);
+                    System.out.println("Livro cadastrado com sucesso!");
+                    // Limpar console
+                    utils.clearConsole(); // Não sei se funciona em todos os sistemas operacionais...
                     break;
                 case 3:
+                    Menu.menu_de_acesso_biblioteca();
+                    System.out.println("Digite a opção desejada: ");
+                    int opcao2 = utils.getValidOption(0, 2);
+
+                    switch (opcao2) {
+                        case 1: // acessar via nome
+                    }
                     break;
 
                 case 4:
-                    System.out.println("Digite o novo nome: ");
-                    String novoNome = utils.getValidString();
                     break;
 
                 case 5:
-                    System.out.println("Digite o id do livro: ");
-                    int idLivro2 = utils.getValidInt();
-
-                    // while (pessoa.conferenciaLivro(idLivro2)) {
-                    System.out.println("Livro não encontrado");
-                    String op = System.console().readLine("Deseja continuar? (s/n)");
-                    if (op.equals("n")) {
-                        break;
-                    }
-
-                    // pessoa.listaLivros();
-                    System.out.println("Digite o id do livro: ");
-                    idLivro2 = utils.getValidInt();
-                    // }
-
-                    // if (pessoa.conferenciaLivro(idLivro2)) {
-                    // break;
-                    // }
-
-                    Menu.menu_de_alteracao_livro();
-                    System.out.println("Digite a opção desejada: ");
-                    // Livro livro = pessoa.getLivro(idLivro2);
-                    int opcao2 = utils.getValidOption(0, 5);
-
-                    switch (opcao2) {
-                        case 1:
-                            // System.out.println("Titulo atual: " + livro.getTitulo());
-                            System.out.println("Digite o novo titulo: ");
-                            String novoTitulo = utils.getValidString();
-                            // livro.setTitulo(novoTitulo);
-                            break;
-                        case 2:
-                            // System.out.println("Autor atual: " + livro.getAutor());
-                            System.out.println("Digite o novo autor: ");
-                            String novoAutor = utils.getValidString();
-                            // livro.setAutor(novoAutor);
-                            break;
-                        case 3:
-                            // System.out.println("Editora atual: " + livro.getEditora());
-                            System.out.println("Digite a nova editora: ");
-                            String novaEditora = utils.getValidString();
-                            // livro.setEditora(novaEditora);
-                            break;
-                        case 4:
-                            // System.out.println("Ano atual: " + livro.getAno());
-                            System.out.println("Digite o novo ano: ");
-                            int novoAno = utils.getValidInt();
-                            // livro.setAno(novoAno);
-                            break;
-
-                        case 5:
-                            // System.out.println("Titulo atual: " + livro.getTitulo());
-                            System.out.println("Digite o novo titulo: ");
-                            String novoTitulo2 = utils.getValidString();
-                            // livro.setTitulo(novoTitulo2);
-                            // System.out.println("Autor atual: " + livro.getAutor() + "\n");
-                            System.out.println("Digite o novo autor: ");
-                            String novoAutor2 = utils.getValidString();
-                            // livro.setAutor(novoAutor2);
-                            // System.out.println("Editora atual: " + livro.getEditora());
-                            System.out.println("Digite a nova editora: ");
-                            String novaEditora2 = utils.getValidString();
-                            // livro.setEditora(novaEditora2);
-                            // System.out.println("Ano atual: " + livro.getAno());
-                            System.out.println("Digite o novo ano: ");
-                            int novoAno2 = utils.getValidInt();
-                            // livro.setAno(novoAno2);
-                            break;
-
-                        default:
-                            break;
-                    }
-
+                    break;
                 default:
                     break;
             }

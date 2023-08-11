@@ -2,8 +2,8 @@ public class Menu {
     public static void menu() {
         System.out.println("----------------- Menu -----------------");
         System.out.println("\nSelecione uma opção:");
-        System.out.println("1 - Adicionar biblioteca");
-        System.out.println("2 - Adicionar livro");
+        System.out.println("1 - Cadastrar biblioteca");
+        System.out.println("2 - Cadastrar livro");
         System.out.println("3 - Acessar biblioteca");
         System.out.println("4 - Remover biblioteca");
         System.out.println("5 - Remover livro");
