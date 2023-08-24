@@ -1,0 +1,1107 @@
+.conteiner_dados#habilitado {
+    height: calc(100vh - 80px);
+    width: calc(100vw - 80px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header {
+    display: flex;
+    gap: 18vw;
+}
+
+#nova_tarefa_bnt {
+    display: flex;
+    align-items: center;
+    width: 16vw;
+    height: 3.69vw;
+    gap: 1.7vw;
+    padding: 1vw;
+
+    background-image: linear-gradient(180deg, #7fff07 0%, #00ff00 50%, #32cd32 100%);
+    box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.521);
+    border: 1px solid #313056;
+    border-radius: 69px;
+    font-size: 1.5vw;
+    font-weight: 550;
+    color: #313056;
+}
+
+#informacoes_usuario,
+#conf-usuario,
+#tarefa {
+    position: absolute;
+    z-index: 1;
+    top: -3vh;
+    left: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.4vw;
+    background: #e4e4e4d7;
+    border-radius: 10px;
+    width: 40vw;
+    height: 80vh;
+    margin: 0 auto;
+    margin-top: 10vh;
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #000000;
+    gap: 3vh;
+}
+
+#perfil_usuario #img-perfil {
+    height: 15vw;
+    margin: 0;
+    border: 3px solid #000000;
+    border-radius: 50%;
+}
+
+#perfil_usuario #img-perfil:hover {
+    cursor: pointer;
+}
+
+#perfil_usuario #dados_perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
+#perfil_usuario #dados_perfil h3 {
+    font-size: calc(1.5vw + 1vh);
+    font-weight: 550;
+    color: #313056;
+}
+
+#perfil_usuario #dados_perfil h2 {
+    font-size: calc(1.5vw + .6vh);
+    font-weight: 500;
+    color: #313056;
+}
+
+#perfil_usuario #dados_perfil :is(#nome-perfil, #email-perfil, #senha-perfil) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1vw;
+    width: 100%;
+}
+
+#perfil_usuario #dados_perfil :is(#nome, #email, #senha) {
+    font-size: 2.3vh;
+    color: #080d43;
+}
+
+#perfil_usuario #dados_perfil :is(#nome, #email, #senha):hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#perfil_usuario #dados_perfil #botoes-perfil {
+    display: flex;
+    gap: 5vw;
+    margin-top: 4vh;
+}
+
+:is(#perfil_usuario #dados_perfil #botoes-perfil,
+    #adicionar_tarefa #form_tarefa #botoes-tarefa, .visualizar_tarefa #botoes-tarefa, .editar_tarefa #botoes-tarefa) button {
+    width: 10vw;
+    height: 4vh;
+    border: 1px solid #313056;
+    border-radius: 10px;
+    background: none;
+    color: #313056;
+    font-size: 1.6vh;
+    font-weight: 550;
+}
+
+:is(#perfil_usuario #dados_perfil #botoes-perfil,
+    #adicionar_tarefa #form_tarefa #botoes-tarefa, .visualizar_tarefa #botoes-tarefa, .editar_tarefa #botoes-tarefa) button:hover {
+    cursor: pointer;
+    background: #313056;
+    color: #ffffff;
+}
+
+#adicionar_tarefa,
+.editar_tarefa,
+.visualizar-tarefa {
+    position: absolute;
+    z-index: 1;
+    top: 10vh;
+    left: 45vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.8vw;
+    background: #e4e4e4d7;
+    border-radius: 10px;
+    width: 40vw;
+    height: 50vh;
+    margin: 0 auto;
+    margin-top: 10vh;
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #000000;
+}
+
+#adicionar_tarefa h3 {
+    font-size: calc(1.5vw + 1vh);
+    font-weight: 550;
+    color: #313056;
+}
+
+.editar_tarefa {
+    height: 60vh;
+}
+
+#adicionar_tarefa #titulo_tarefa_input,
+.editar_tarefa #edit-titulo_tarefa {
+    width: 15vw;
+    padding: 1vh;
+    padding-left: 1.5vh;
+    margin-left: 2.5vw;
+    border: 1px solid #313056;
+    border-radius: 15px;
+    font-size: 2vh;
+    background: none;
+    color: #313056;
+}
+
+.editar_tarefa form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vh;
+}
+
+.editar_tarefa div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1vh;
+}
+
+.editar_tarefa #botoes-tarefa {
+    flex-direction: row;
+    gap: 5vw;
+}
+
+.editar_tarefa #edit-titulo_tarefa {
+    width: 10vw;
+    padding: .5vh;
+    padding-left: 1.4vw;
+    margin-left: 1vw;
+    border: 1px solid #313056;
+    border-radius: 15px;
+    font-size: 2vh;
+    background: none;
+    color: #313056;
+}
+
+#adicionar_tarefa #titulo_tarefa_input::placeholder,
+.editar_tarefa #edit-titulo_tarefa::placeholder {
+    font-size: 1.8vh;
+    color: #313056;
+}
+
+#adicionar_tarefa #titulo_tarefa_input:focus {
+    outline: none;
+}
+
+#adicionar_tarefa #descricao-tarefa,
+.editar_tarefa #edit-descricao_tarefa {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    padding: 0;
+}
+
+#adicionar_tarefa #descricao_tarefa_input,
+.editar_tarefa #edit-descricao_tarefa {
+    width: 15vw;
+    padding: 1vh;
+    border: 1px solid #313056;
+    border-radius: 10px;
+    font-size: 2vh;
+    background: none;
+    color: #313056;
+}
+
+#adicionar_tarefa #descricao_tarefa_input::placeholder {
+    color: #313056;
+}
+
+#adicionar_tarefa #descricao_tarefa_input:focus {
+    outline: none;
+}
+
+.switch {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.switch input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.switch label#toogle {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 35px;
+    height: 20px;
+    background: #f1f1f1;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+.switch label#toogle:after {
+
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background: #5e5959;
+    border-radius: 90px;
+    transition: 0.3s;
+
+}
+
+.switch input:checked+label#toogle {
+    background: #00c3ff;
+}
+
+.switch input:checked+label#toogle:after {
+    background: #ffffff;
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+.switch label#toogle:active:after {
+    width: 15px;
+}
+
+#adicionar_tarefa #data_tarefa_input,
+.editar_tarefa #edit-data_tarefa {
+    /*input do tipo date*/
+
+    width: 12vw;
+    padding: .5vh;
+    margin-left: 2vw;
+    border: 1px solid #313056;
+    border-radius: 10px;
+    font-size: 2vh;
+    background: none;
+    color: #313056;
+    text-align: center;
+}
+
+#adicionar_tarefa #data_tarefa_input:focus,
+.editar_tarefa #edit-data_tarefa:focus {
+    outline: none;
+}
+
+#adicionar_tarefa #form_tarefa {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+#adicionar_tarefa #form_tarefa #botoes-tarefa,
+.editar_tarefa #botoes-tarefa,
+.visualizar-tarefa #botoes-tarefa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    margin-top: 1vh;
+}
+
+#botoes_tarefa {
+    display: none;
+}
+
+#botoes_tarefa img {
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+#nova_tarefa_bnt img {
+    width: 2vw;
+    height: 2vw;
+}
+
+#nova_tarefa_bnt:hover {
+    cursor: pointer;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.354);
+}
+
+#conf_usuario {
+    display: flex;
+}
+
+
+#menu_usuario_bnt {
+    display: flex;
+    background: none;
+    padding: 0px;
+    margin-left: 1vw;
+    border: #313056 3px solid;
+    border-radius: 50%;
+}
+
+#avatar {
+    width: 3.69vw;
+    height: 3.69vw;
+}
+
+#opcoes_usuario {
+    list-style: none;
+    position: absolute;
+    z-index: 1;
+    top: calc(28.1.2vh - 5vw);
+    right: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1vw;
+    width: 10vw;
+    height: 10vw;
+    padding: 1vw;
+    background: #912adba9;
+    margin: 0;
+
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+#menu {
+    padding: 0;
+    margin: 0;
+}
+
+#triangle_op_usuario {
+    margin-top: .5vw;
+    margin-left: 1.5vw;
+    margin-bottom: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+    border-left: 1.5vw solid transparent;
+    border-right: 1.5vw solid transparent;
+    border-bottom: 1.5vw solid #912adba9;
+}
+
+
+#opcoes_usuario img {
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+#opcoes_usuario a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.3vw;
+    font-weight: 550;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5vw;
+    padding-bottom: 5px;
+
+    transition: 0.3s;
+    border-bottom: 1px solid #313056;
+}
+
+#opcoes_usuario a:hover {
+    color: #313056;
+}
+
+#search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5vw;
+    padding: .5vw 1vw .5vw 1vw;
+    background: #e4e4e4d7;
+    border-radius: 50px;
+    height: 2vw;
+}
+
+#search_input {
+    width: 15vw;
+    padding: 1vw;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2vw;
+    background: none;
+    color: #313056;
+}
+
+#search_input::placeholder {
+    color: #313056;
+}
+
+#search_input::-webkit-search-cancel-button {
+    cursor: pointer;
+}
+
+#search_input:focus {
+    outline: none;
+}
+
+#search_bnt {
+    background: none;
+    padding: 0px;
+}
+
+#lupa {
+    width: 1.5vw;
+    height: 1.8vw;
+    padding-right: .2vw;
+}
+
+#linha {
+    width: 1.8vw;
+    height: 0px;
+    border: 1px solid #313056;
+    transform: rotate(90deg);
+}
+
+#linha_esq,
+#linha_dir {
+    width: 28vw;
+    height: 0px;
+
+    border: 1px solid #313056;
+    transform: rotate(180deg)
+}
+
+#Todo_list_msg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+#Todo_list_msg h1 {
+    font-size: 2vw;
+    font-weight: 550;
+    color: #313056;
+}
+
+#tarefas-conteiner {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.tarefa {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-left: 4rem;
+    gap: 1.5vw;
+    width: 56vw;
+}
+
+.tarefa:hover {
+    cursor: pointer;
+
+    #botoes_tarefa {
+        display: flex;
+        flex-direction: column;
+        gap: .3vw;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #botoes_tarefa * {
+        background: transparent;
+    }
+
+    #botoes_tarefa img {
+        background: #c43df62d;
+        border-radius: 30%;
+        padding: 0.6vw;
+        box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.15);
+    }
+}
+
+#concluir_tarefa_checkbox {
+    width: 1.5vw;
+    height: 1.5vw;
+    margin-top: 3vh;
+}
+
+#concluir_tarefa_checkbox:hover {
+    cursor: pointer;
+}
+
+.tarefa-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 38vw;
+    height: 13.5vh;
+    padding: 0 10px 10px;
+    background: #c43df62d;
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+}
+
+
+#titulo_tarefa,
+#descricao_tarefa {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+#titulo_tarefa {
+    -webkit-line-clamp: 1;
+    margin-top: 5px;
+    font-size: 1.3vw;
+    font-weight: bold;
+    width: 90%;
+    border: 1px solid #313056a1;
+    border-radius: 10px;
+    padding: 2.6px 15px 2.6px 15px;
+    text-align: center;
+}
+
+#descricao_tarefa {
+    font-size: 1vw;
+    font-weight: 600;
+    width: 98%;
+    height: 1.5vw;
+    border: 1px solid #3130564e;
+    border-radius: 10px;
+    padding: 1px 5px 10px 5px;
+    text-align: center;
+}
+
+#data_criacao_tarefa {
+    font-size: 1.2vw;
+    font-weight: 600;
+    width: 98%;
+    height: .8vh;
+    /* padding: top right bottom left;
+     */
+    padding: 0 0 .6vh .3vw;
+    margin: 0;
+}
+
+.tarefa-content:hover {
+    cursor: pointer;
+    background: #c53df679;
+}
+
+#navegacao_tarefas {
+    /* position: absolute;
+    top: 80vh;
+    left: calc(80vw - 100px); */
+    width: 80%;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+#navegacao_tarefas #paginas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#navegacao_tarefas a {
+    margin: 0;
+    font-size: 10px;
+    font-weight: bold;
+
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px 8.5px;
+    background-color: rgba(255, 255, 255, 0.484);
+    text-align: center;
+}
+
+#navegacao_tarefas a:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#navegacao_tarefas .selecionado {
+    background-color: rgba(41, 42, 44, 0.696);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.97);
+}
+
+#navegacao_tarefas .selecionado:hover {
+    background-color: rgba(41, 42, 44, 0.696);
+}
+
+#navegacao_tarefas img {
+    padding: 0;
+    margin: 0;
+}
+
+#navegacao_tarefas :is(#anterior_bnt,
+    #proximo_bnt) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6px;
+    height: 12px;
+}
+
+.visualizar-tarefa {
+    gap: .6vh;
+    height: 50%;
+    width: 25%;
+    align-items: stretch;
+    justify-content: center;
+}
+
+#visualizar_tarefa :is(#titulo-tarefa, #descricao-tarefa, #data_criacao-tarefa, #data-tarefa, #status-tarefa) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .6vh;
+}
+
+#visualizar_tarefa #prioridade-tarefa {
+    display: flex;
+    align-items: center;
+    gap: .8vh;
+}
+
+#visualizar_tarefa label {
+    font-size: 2.5vh;
+    font-weight: 600;
+}
+
+#visualizar_tarefa button {
+    width: 60%;
+    height: 5vh;
+    border: none;
+    border-radius: 10px;
+    background-color: #c43df62d;
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.15);
+    font-size: 2vh;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+#visualizar_tarefa button:hover {
+    background-color: #c43df6;
+}
+
+#configuracoes select {
+    width: 100%;
+    height: 5vh;
+    border: none;
+    border-radius: 10px;
+    background-color: #c43df62d;
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.15);
+    font-size: 2vh;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+}
+
+#configuracoes select:hover {
+    background-color: #c43df6;
+
+}
+
+#configuracoes #botoes-conf {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#configuracoes button {
+    width: 10vw;
+    height: 5vh;
+    border: none;
+    border-radius: 10px;
+    background-color: #c43df62d;
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.15);
+    font-size: 2vh;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 2vw;
+}
+
+@media(max-width: 950px) {
+
+    header {
+        gap: 18vw;
+    }
+
+
+    #tarefas-conteiner {
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+    }
+
+    .tarefa {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        margin-left: 1rem;
+        gap: 1.5vw;
+        width: 56vw;
+    }
+
+    .tarefa:hover {
+        cursor: pointer;
+
+        #botoes_tarefa {
+            display: flex;
+            flex-direction: column;
+            gap: .3vw;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #botoes_tarefa * {
+            background: transparent;
+        }
+
+        #botoes_tarefa img {
+            background: #c43df62d;
+            border-radius: 30%;
+            padding: 0.6vw;
+            box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    #concluir_tarefa_checkbox {
+        width: 1.5vw;
+        height: 1.5vw;
+        margin-top: 3vh;
+    }
+
+    #concluir_tarefa_checkbox:hover {
+        cursor: pointer;
+    }
+
+    .tarefa-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 45vw;
+        height: 10.5vh;
+        padding: 0 10px 10px;
+        background: #c43df62d;
+        box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.15);
+        border-radius: 15px;
+    }
+
+    #descricao_tarefa {
+        height: 1.55vh;
+
+    }
+
+    #navegacao_tarefas {
+        right: 20%;
+    }
+}
+
+@media(max-width: 800px) {
+    .tarefa {
+        width: 60vw;
+        height: 11vw;
+    }
+
+    .tarefa-content {
+        width: 45vw;
+        height: 9vw;
+    }
+
+    header {
+        gap: 15vw;
+    }
+
+    #opcoes_usuario {
+        right: calc(9vw - 2vh);
+    }
+
+    #nova_tarefa_bnt {
+        width: calc(2.5vw + 20vh);
+        height: calc(2.5vw + 3vh);
+        font-size: 2vh;
+        padding-left: 2.5vh;
+    }
+
+    #titulo_tarefa {
+        font-size: 1.6vh;
+        height: 1.6vh;
+    }
+
+    #descricao_tarefa {
+        font-size: 1.3vh;
+        height: 1.4vh;
+    }
+
+    #search {
+        width: calc(2.5vw + 16vh);
+        height: calc(2.5vw + .3vh);
+    }
+
+    #search input {
+        width: calc(3vw + 10.4vh);
+    }
+
+    #concluir_tarefa_checkbox {
+        width: 2vh;
+        height: 2vh;
+        margin-top: 3vh;
+    }
+
+    #opcoes {
+        margin-left: 1vw;
+    }
+
+    #linha_esq,
+    #linha_dir {
+        width: 25vw;
+    }
+
+    #nova_tarefa_bnt img {
+        width: 2.5vh;
+        height: 2.5vh;
+    }
+
+    #perfil_usuario #dados_perfil :is(#nome-perfil, #email-perfil, #senha-perfil) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #perfil_usuario #dados_perfil :is(#nome-perfil, #email-perfil, #senha-perfil) label {
+        font-size: calc(1.5vh + 0.8vw);
+    }
+
+    #perfil_usuario #dados_perfil :is(#nome, #email, #senha) {
+        font-size: calc(1.5vh + 0.5vw);
+    }
+
+    #perfil_usuario #informacoes_usuario {
+        top: 8vh;
+        left: 18%;
+        width: 50vw;
+        height: calc(70vh - 5vw);
+    }
+
+    #perfil_usuario #dados_perfil #botoes-perfil button {
+        width: 15vw;
+        height: 4vh;
+        font-size: 1.5vh;
+    }
+}
+
+@media(max-width: 570px) {
+    .tarefa {
+        width: 70vw;
+        height: 10vh;
+    }
+
+    .tarefa-content {
+        width: 55vw;
+        height: 8vh;
+    }
+
+    header {
+        gap: 10vw;
+    }
+
+    #opcoes_usuario {
+        right: calc(9.2vw - 2vh);
+        width: 12vh;
+        height: 10vh;
+    }
+
+    #opcoes_usuario a {
+        font-size: 1.5vh;
+    }
+
+    #nova_tarefa_bnt {
+        width: 30vw;
+        height: calc(2.5vw + 3vh);
+        font-size: 3vw;
+        padding-left: 2.5vh;
+    }
+
+
+
+    #titulo_tarefa {
+        font-size: 1.6vh;
+        height: 1.8vh;
+    }
+
+    #descricao_tarefa {
+        font-size: 1.3vh;
+        height: 1.6vh;
+    }
+
+    #search {
+        width: 2.7vh;
+        height: 3.3vh;
+    }
+
+    #lupa {
+        width: 2.5vh;
+        height: 2.5vh;
+    }
+
+    #menu_usuario_bnt img {
+        width: 4vh;
+        height: 4vh;
+    }
+
+    #search input {
+        display: none;
+    }
+
+
+    #botoes_tarefa img {
+        width: 2vh;
+        height: 2vh;
+    }
+
+    #opcoes {
+        margin-left: 1vw;
+    }
+
+    #linha_esq,
+    #linha_dir {
+        width: 25vw;
+    }
+
+    #navegacao_tarefas #paginas a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2vh;
+        width: 2.5vh;
+        height: 2.5vh;
+        padding: 0;
+    }
+
+    #navegacao_tarefas :is(#anterior_bnt,
+        #proximo_bnt) {
+        width: .5vh;
+        height: 1.5vh;
+    }
+
+}
+
+
+@media(max-width: 400px) {
+    .tarefa {
+        width: 60vw;
+        height: 10vh;
+    }
+
+    .tarefa-content {
+        width: 50vw;
+        height: 8vh;
+    }
+
+    header {
+        gap: 10vw;
+    }
+
+    #menu_usuario_bnt img {
+        width: 3vh;
+        height: 3vh;
+    }
+
+    #search {
+        width: 2vh;
+        height: 2.6vh;
+        padding-bottom: 0;
+    }
+
+    #lupa {
+        width: 2vh;
+        height: 2vh;
+    }
+
+    #opcoes_usuario {
+        right: calc(9.2vw - 1.5vh);
+        width: 8.8vh;
+        height: 10vh;
+    }
+
+    #opcoes_usuario a {
+        font-size: 1.2vh;
+    }
+
+    #nova_tarefa_bnt {
+        width: 30vw;
+        height: calc(2.5vw + 3vh);
+        font-size: 2.8vw;
+        padding-left: 2.5vw;
+    }
+
+    #titulo_tarefa {
+        font-size: 1.3vh;
+        height: 1.2vh;
+    }
+
+    #descricao_tarefa {
+        font-size: 1.1vh;
+        height: 1.2vh;
+    }
+
+    #perfil_usuario #informacoes_usuario {
+        top: 9vh;
+        left: 15%;
+        width: 50vw;
+        height: 50vh;
+    }
+
+    #perfil_usuario #dados_perfil :is(#nome-perfil, #email-perfil, #senha-perfil) label {
+        font-size: calc(1.2vh + 0.8vw);
+    }
+
+    #perfil_usuario #dados_perfil :is(#nome, #email, #senha) {
+        font-size: calc(1.2vh + 0.5vw);
+    }
+
+    #perfil_usuario #dados_perfil #botoes-perfil button {
+        width: 18vw;
+        height: 3vh;
+        font-size: 1.2vh;
+    }
+}
