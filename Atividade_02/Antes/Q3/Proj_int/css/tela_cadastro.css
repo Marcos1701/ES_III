@@ -1,0 +1,758 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@keyframes circle1 {
+    100% {
+        left: 48%;
+    }
+}
+
+@keyframes circle2 {
+    100% {
+        left: 68%;
+        top: -87px;
+    }
+}
+
+@keyframes circle3 {
+    100% {
+        left: 5%;
+    }
+}
+
+@keyframes circle4 {
+    100% {
+        left: 25%;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+.circulos#circulos-cadastro #circulo1 {
+    animation: circle1 3s ease-in-out forwards;
+}
+
+.circulos#circulos-cadastro #circulo2 {
+    animation: circle2 3s ease-in-out forwards;
+}
+
+.circulos#circulos-cadastro #circulo3 {
+    animation-name: float, circle3;
+    animation-duration: 3s, 5s;
+    animation-iteration-count: infinite, 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.circulos#circulos-cadastro #circulo4 {
+    animation-name: float, circle4;
+    animation-duration: 3s, 5s;
+    animation-iteration-count: infinite, 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#realizar_login {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+
+    background: linear-gradient(197.39deg, rgba(221, 219, 242, 0.61) 0%, rgba(8, 243, 32, 0.5185) 100%);
+    border-radius: 30px 0px 0px 30px;
+}
+
+#realiza_cadastro {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(21, 1, 255, 0.02);
+    border-radius: 0px 30px 30px 0px;
+}
+
+
+#realizar_login_msg {
+    position: absolute;
+    width: 20vw;
+    height: 15vw;
+    left: 3%;
+    top: 28%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;
+    letter-spacing: 0.02em;
+    color: #313056;
+}
+
+#msg_login {
+    position: absolute;
+    width: 30vw;
+    height: 15vw;
+    left: 3%;
+    top: 15%;
+
+    font-family: 'Inter';
+    font-style: bold;
+    font-weight: 700;
+    font-size: 1.8vw;
+    line-height: 2vw;
+    letter-spacing: 0.065em;
+    color: #313056;
+}
+
+#linha_realizar_login {
+    position: absolute;
+    width: 5vw;
+    left: 2%;
+    top: 26%;
+
+    border: 1.5px solid #000000;
+    transform: rotate(180deg);
+}
+
+:is(#login_btn_to_840px, #realizar_login_bnt) {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(90deg, rgba(212, 38, 255, 0.5) 0%, rgba(183, 223, 69, 0.415) 95.83%);
+    border: 0.0001px solid #000000;
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 60px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.2vw;
+    line-height: 1.4vw;
+    letter-spacing: 0.065em;
+    color: #313056;
+}
+
+#realizar_login_bnt {
+    position: absolute;
+    width: 10em;
+    height: 3em;
+    left: 10%;
+    top: 70%;
+}
+
+:is(#realizar_login_bnt, #login_btn_to_840px):hover {
+    background: linear-gradient(90deg, rgba(212, 38, 255, 0.5) 0%, rgba(183, 223, 69, 0.415) 95.83%);
+    border: 0.5px solid #000000;
+    box-shadow: -1px 1px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 60px;
+}
+
+#login_btn_to_840px {
+    display: none;
+}
+
+#realiza_cadastro #botao_lembrar_senha {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+
+}
+
+#realiza_cadastro #botao_lembrar_senha input {
+    width: 1.2vw;
+    height: 1.2vw;
+    margin-bottom: 2px;
+}
+
+#realiza_cadastro #botao_lembrar_senha label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    /* font-size: 1vw; */
+    line-height: 1.2vw;
+    letter-spacing: 0.02em;
+    color: #313056;
+}
+
+#msg_cadastro {
+    display: flex;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5vw;
+    line-height: 3vw;
+    letter-spacing: 0.15em;
+    color: #313056;
+}
+
+.entradas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#nome,
+#email,
+#senha {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding-left: 15px;
+
+    width: 24em;
+    height: 3.3em;
+
+    background: rgba(255, 255, 255, 0.655);
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 60px;
+}
+
+#nome {
+    padding-left: 3em;
+    width: 22em;
+}
+
+:is(#nome, #email, #senha) input {
+
+    display: grid;
+    place-items: center;
+
+    height: 50px;
+    width: 100%;
+
+    background: transparent;
+    border-radius: 60px;
+
+    border: none;
+    outline: none;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #313056;
+}
+
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-text-fill-color: #000;
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff00 inset;
+}
+
+:is(#nome, #senha, #email) input::placeholder {
+    height: 20px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 23px;
+
+    letter-spacing: 0.25em;
+
+    color: #313056;
+}
+
+#usuario {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+
+#senha input::-ms-reveal {
+    filter: drop-shadow(1px 1px 1px currentColor);
+}
+
+:is(#email, #senha) img {
+    width: 30px;
+    height: 22px;
+}
+
+#botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 20px;
+}
+
+#realiza_cadastro_btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 13px 10px 22px;
+    gap: 20px;
+
+    width: 200px;
+    height: 55px;
+
+    background: #313056;
+    box-shadow: 1px 1px 15px rgba(255, 255, 255, 0.649);
+    border-radius: 60px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #FFFFFF;
+
+    letter-spacing: 0.3rem;
+}
+
+#realiza_login_btn:hover {
+    background: #313056;
+    box-shadow: 2px 2px 25px rgba(255, 255, 255, 0.896);
+    border-radius: 60px;
+}
+
+
+#login_via_google {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#linha_divisoria {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#linha_esquerda {
+    width: 150px;
+    height: 0px;
+
+    border: 2px solid #000000;
+    transform: rotate(180deg);
+}
+
+#linha_direita {
+    width: 150px;
+    height: 0px;
+
+    border: 2px solid #000000;
+    transform: rotate(180deg);
+
+}
+
+@media (max-width: 1060px) {
+
+    #msg_cadastro {
+        padding-top: 28px;
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .referentes_a_senha {
+        gap: 50px;
+    }
+
+    #inputs {
+        gap: 15px;
+    }
+
+    #nome,
+    #email,
+    #senha {
+        gap: 20px;
+        padding-left: 10px;
+
+        width: 300px;
+        height: 45px;
+    }
+
+    :is(#nome, #email, #senha) input {
+        height: 45px;
+    }
+
+    :is(#nome, #sobrenome, #email, #senha) input::placeholder {
+        height: 20px;
+
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    #senha input::-ms-reveal {
+        filter: drop-shadow(1px 1px 1px currentColor);
+    }
+
+    #botoes {
+        gap: 15px;
+    }
+
+    #realiza_cadastro_btn {
+        padding: 10px 13px 10px 22px;
+        gap: 10px;
+
+        width: 200px;
+        height: 45px;
+
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    #realiza_cadastro #botao_lembrar_senha label {
+        font-size: 15px;
+    }
+
+    #realiza_cadastro #botao_lembrar_senha input {
+        width: 15px;
+        height: 15px;
+        margin-bottom: 3px;
+    }
+
+    #realiza_cadastro #botao_lembrar_senha {
+        padding-right: 180px;
+    }
+
+    #login_via_google {
+        gap: 10px;
+    }
+
+    #linha_divisoria {
+        gap: 5px;
+    }
+
+    #linha_esquerda {
+        width: 100px;
+        height: 0px;
+
+        border: 1px solid #000000;
+    }
+
+    #linha_direita {
+        width: 100px;
+        height: 0px;
+
+        border: 1px solid #000000;
+    }
+
+    #icon_google {
+        width: 20px;
+        height: 20px;
+    }
+
+    #logo_google {
+        width: 35px;
+        height: 35px;
+    }
+
+    #logo_google:hover {
+        background: rgba(255, 255, 255, 0.34);
+        box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.407);
+        border-radius: 60px;
+    }
+
+    #msg_login {
+        font-size: 22px;
+    }
+
+    #linha_realizar_login {
+        width: 50.13px;
+        left: 17px;
+        top: 134.3px;
+    }
+
+    #realizar_login_msg {
+        font-size: 12px;
+        width: 19em;
+    }
+
+    #realizar_login_bnt {
+        left: 68px;
+        top: 340px;
+        width: 160px;
+        height: 45px;
+        font-size: 16px;
+        line-height: 25px;
+    }
+
+    .alterar_tela {
+        position: absolute;
+        width: 67px;
+        height: 67px;
+        left: 36%;
+        top: 50%;
+    }
+
+    .alterar_tela img {
+        width: 30px;
+        height: 17px;
+    }
+
+}
+
+@media (max-width: 840px) {
+
+    .circulos#circulos-cadastro #circulo2 {
+
+        animation-name: float;
+        animation-duration: 5s;
+        animation-iteration-count: infinite, 1;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    .circulos#circulos-cadastro #circulo4 {
+        left: 65%;
+        top: auto;
+        animation-name: float;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    .circulos#circulos-cadastro #circulo1 {
+        top: 3%;
+        left: 68%;
+        animation-name: float;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    .circulos#circulos-cadastro #circulo3 {
+        top: 70%;
+        left: 10%;
+        animation-name: float;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+    }
+
+    #msg_cadastro {
+        padding-top: 50px;
+        padding-bottom: 15px;
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    #inputs {
+        gap: 22px;
+    }
+
+    #realiza_cadastro {
+        width: 100%;
+    }
+
+    #realiza_cadastro #botao_lembrar_senha label {
+        font-size: 13.5px;
+        margin: 5px;
+    }
+
+    #botoes {
+        padding-top: 5px;
+        padding-bottom: 15px;
+    }
+
+    #ou {
+        font-size: 14px;
+    }
+
+    #realiza_cadastro_btn {
+        width: 130px;
+        height: 40px;
+
+        font-size: 10px;
+    }
+
+    #linha_divisoria {
+        gap: 17px;
+    }
+
+    #realizar_login,
+    .alterar_tela {
+        display: none;
+    }
+
+    #login_btn_to_840px {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 130px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    #botoes_entrar_e_cria_conta {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+
+
+    .circulos#circulos-cadastro #circulo1 {
+        top: 10%;
+        left: 8%;
+    }
+
+    .circulos#circulos-cadastro #circulo2 {
+        top: 10%;
+        left: 65%;
+    }
+
+    .circulos#circulos-cadastro #circulo4 {
+        top: 70%;
+        left: 65%;
+    }
+
+    .circulos#circulos-cadastro #circulo3 {
+        top: 75%;
+        left: -30%;
+    }
+
+    .conteiner_dados#habilitado {
+        width: 85vw;
+        height: 80vh;
+    }
+
+    #realiza_cadastro {
+        width: 80vw;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 15vw;
+    }
+
+    #msg_cadastro {
+        font-size: 9vw;
+    }
+
+    #inputs {
+        gap: 3vw;
+    }
+
+    #realiza_cadastro #botao_lembrar_senha label {
+        font-size: 3.5vw
+    }
+
+    #realiza_cadastro #botao_lembrar_senha {
+        gap: 0px;
+    }
+
+    #realiza_cadastro #botao_lembrar_senha input {
+        width: 4vw;
+        margin: 0px;
+        margin-bottom: 3px;
+    }
+
+    #ou {
+        font-size: 4vw;
+    }
+
+    #linha_esquerda,
+    #linha_direita {
+        width: 20vw;
+    }
+
+    #realiza_cadastro_btn {
+        width: 38vw;
+        height: 10vw;
+
+        font-size: 3.3vw;
+        font-weight: 550;
+    }
+
+    #linha_divisoria {
+        gap: 3vw;
+    }
+
+    #realizar_login,
+    .alterar_tela {
+        display: none;
+    }
+
+    #login_btn_to_840px {
+        width: 25vw;
+        height: 10vw;
+        font-size: 3.7vw;
+        font-weight: 1000;
+    }
+
+    #botoes_entrar_e_cria_conta {
+        gap: 5px;
+    }
+
+    #realiza_cadastro #botao_lembrar_senha {
+        padding-right: 28vw
+    }
+
+
+    #nome,
+    #sobrenome,
+    #email,
+    #senha {
+        width: 55vw;
+        height: 10.1vw;
+        gap: 8px;
+    }
+
+    :is(#nome, #sobrenome, #email, #senha) img {
+        width: 6vw;
+        height: 5vw;
+    }
+
+    :is(#nome, #sobrenome, #email, #senha) input {
+        font-size: 4vw;
+    }
+
+    :is(#nome, #sobrenome, #email, #senha) input::placeholder {
+        font-size: 3.5vw;
+    }
+
+    #nome {
+        width: 24vw;
+    }
+
+    #sobrenome {
+        width: 35vw;
+    }
+
+    #login_via_google {
+        padding: 0px;
+        margin: 0px;
+    }
+}

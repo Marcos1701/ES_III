@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planr | Home</title>
+
+    <link rel="stylesheet" href="../css/background.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/loader.css">
+
+    <script src="../javascript/usuario.js"></script>
+    <script src="../javascript/home.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="circulos">
+            <div id="circulo4"></div>
+            <div id="circulo3"></div>
+            <div id="circulo2"></div>
+            <div id="circulo1"></div>
+        </div>
+
+        <div class="conteiner_dados" id="habilitado">
+            <header>
+
+                <button id="nova_tarefa_bnt"><img src="../imagens/Icones/plus_icon.svg"
+                        alt="simbolo de adição matemática">
+                    Nova
+                    Tarefa</button>
+
+                <div id="conf_usuario">
+                    <div id="search" title="Pesquisar por título da tarefa">
+                        <input type="search" name="search" id="search_input" placeholder="Pesquisar" value="">
+                        <a href="#" id="search_bnt">
+                            <img src="../imagens/Icones/search.svg" alt="simbolo de lupa" id="lupa">
+                        </a>
+                    </div>
+                    <div id="opcoes">
+                        <button id="menu_usuario_bnt" title="Clique aqui e acesse as opções de usuário">
+                            <img src="../imagens/Avatar/Avatar.svg" alt="simbolo de usuário" id="avatar">
+                        </button>
+
+                        <div id="menu" hidden>
+                            <div id="triangle_op_usuario"></div>
+                            <ul id="opcoes_usuario">
+                                <li><a href="#" id="perfil_bnt"><img src="../imagens/Icones/profile2.svg"
+                                            alt="imagem de perfil">Perfil</a></li>
+                                <li><a href="#" id="config_bnt"><img src="../imagens/Icones/conf_3.svg"
+                                            alt="imagem de engrenagem">Configurações</a></li>
+                                <li hidden><a href="#" id="admin_bnt">Op. Admin</a></li hidden>
+                                <li><a href="#" id="sair_bnt"><img src="../imagens/Icones/logout.svg"
+                                            alt="icone de logout">Sair</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <div class="background-blur" id="loading" hidden>
+                    <div class="loader">
+                        <div class="custom-loader"></div>
+                    </div>
+                </div>
+                <div class="background-blur" id="add_tarefa" hidden>
+                    <section id="adicionar_tarefa">
+                        <h3>ADICIONAR TAREFA</h3>
+
+                        <form action="" id="form_tarefa">
+                            <div id="titulo-tarefa">
+                                <label for="titulo_tarefa_input">Título</label>
+                                <input type="text" name="titulo_tarefa_input" id="titulo_tarefa_input"
+                                    placeholder="Digite o título da tarefa">
+                            </div>
+
+                            <div id="descricao-tarefa">
+                                <label for="descricao_tarefa_input">Descrição</label>
+                                <textarea name="descricao_tarefa_input" id="descricao_tarefa_input" cols="30" rows="4"
+                                    placeholder="Digite a descrição da tarefa"></textarea>
+                            </div>
+
+                            <div class="switch">
+                                <label for="switch">Adicionar data? </label>
+                                <input type="checkbox" id="switch" />
+                                <label for="switch" id="toogle">Toggle</label>
+                            </div>
+
+                            <div id="data-tarefa" hidden>
+                                <label for="data_tarefa_input">Data</label>
+                                <input type="date" name="data_tarefa_input" id="data_tarefa_input">
+                            </div>
+
+                            <div id="prioridade-tarefa">
+                                <label for="prioridade_tarefa_input">Prioridade</label>
+                                <input type="range" min="0" max="5" id="prioridade_tarefa_input" value="0">
+                            </div>
+
+                            <div id="botoes-tarefa">
+                                <button id="cancelar_tarefa_bnt">Cancelar</button>
+                                <button id="salvar_tarefa_bnt">Salvar</button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+
+                <div class="background-blur" id="edit_tarefa" hidden>
+                    <section class="editar_tarefa">
+                        <input type="hidden" id="id_tarefa">
+                        <h3>EDITAR TAREFA</h3>
+                        <p id="msg-erro_edit"></p>
+                        <form action="" id="edit-form_tarefa">
+                            <div id="titulo-tarefa">
+                                <label for="edit-titulo_tarefa">Novo Título: </label>
+                                <input type="text" name="edit-titulo_tarefa" id="edit-titulo_tarefa"
+                                    placeholder="Digite o título da tarefa">
+                            </div>
+
+                            <div id="descricao-tarefa">
+                                <label for="edit-descricao_tarefa">Nova Descrição: </label>
+                                <textarea name="edit-descricao_tarefa" id="edit-descricao_tarefa" cols="30" rows="4"
+                                    placeholder="Digite a descrição da tarefa"></textarea>
+                            </div>
+
+                            <div id="data-tarefa">
+                                <label for="edit-data_tarefa">Nova Data Conclusão</label>
+                                <input type="date" name="edit-data_tarefa" id="edit-data_tarefa">
+                            </div>
+
+                            <div id="prioridade-tarefa">
+                                <label for="edit-prioridade_tarefa">Nova Prioridade</label>
+                                <input type="range" min="0" max="5" id="edit-prioridade_tarefa" value="0">
+                            </div>
+
+                            <div id="botoes-tarefa">
+                                <button id="cancelar_edit-tarefa_bnt">Cancelar</button>
+                                <button id="salvar_edit-tarefa_bnt">Salvar</button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+
+                <div class="background-blur" id="configuracoes" hidden>
+                    <div id="conf-usuario">
+                        <h3>Configurações</h3>
+                        <section id="filtros">
+                            <label for="filtros">Filtrar tarefas por: </label>
+                            <select name="filtros" id="select-filtros">
+                                <option value="criacao" selected>Data de criação</option>
+                                <option value="conclusao">Data de conclusão</option>
+                                <option value="prioridade">Prioridade</option>
+                            </select>
+
+                            <div id="botoes-conf">
+                                <button id="cancelar_conf_bnt">Cancelar</button>
+                                <button id="salvar_conf_bnt">Salvar</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="background-blur" id="perfil_usuario" hidden>
+                    <section id="informacoes_usuario">
+                        <div id="imagem_perfil">
+                            <img src="../imagens/Avatar/Avatar.svg" alt="simbolo de usuário" id="img-perfil">
+                        </div>
+
+                        <section id="dados_perfil">
+                            <h3>PERFIL</h3>
+
+                            <div id="nome-perfil">
+                                <label for="nome_usuario">Nome de usuario: </label>
+                                <a href="#" id="nome" title="clique aqui para alterar o nome de usuario">Zé da Manga</a>
+                                <input type="text" name="nome_usuario" id="nome_usuario" hidden>
+                            </div>
+
+                            <div id="email-perfil">
+                                <label for="email_perfil_input">E-mail: </label>
+                                <a href="#" id="email"
+                                    title="clique aqui para alterar o email">zédamanga@aaaaaaa.com</a>
+                                <input type="email" name="email_perfil_input" id="email_perfil_input"
+                                    placeholder="Digite seu novo e-mail" hidden>
+                            </div>
+
+                            <div id="senha-perfil">
+                                <label for="senha_perfil_input">Senha: </label>
+                                <a href="#" id="senha" title="clique aqui para alterar a senha">***********</a>
+                                <input type="text" name="senha_perfil_input" id="senha_perfil_input"
+                                    placeholder="Digite sua nova senha" hidden>
+                            </div>
+                            <div id="botoes-perfil">
+                                <button id="cancelar_perfil_bnt">Cancelar</button>
+                                <button id="salvar_perfil_bnt">Salvar</button>
+                            </div>
+
+                        </section>
+                    </section>
+                </div>
+
+                <div class="background-blur" id="visualizar_tarefa" hidden>
+                    <div class="visualizar-tarefa">
+                        <div id="titulo-tarefa">
+                            <label for="titulo-tarefa">Titulo</label>
+                            <h3 id="titulo_tarefa">Título da tarefa</h3>
+                        </div>
+
+                        <div id="descricao-tarefa">
+                            <label for="descricao-tarefa">Descrição</label>
+                            <p id="descricao_tarefa">Descrição da tarefa</p>
+                        </div>
+
+                        <div id="data_criacao-tarefa">
+                            <label for="data-tarefa">Data Criação</label>
+                            <p id="data_criacao_tarefa">Data da tarefa</p>
+                        </div>
+
+                        <div id="data-tarefa">
+                            <label for="data-tarefa">Data Conclusão</label>
+                            <p id="data_tarefa">Data da tarefa</p>
+                        </div>
+
+                        <div id="status-tarefa">
+                            <label for="status-tarefa">Status</label>
+                            <p id="status_tarefa">Status da tarefa</p>
+                        </div>
+
+                        <div id="prioridade-tarefa">
+                            <label for="prioridade-tarefa">Prioridade: </label>
+                            <p id="prioridade_tarefa">Prioridade da tarefa</p>
+                        </div>
+
+                        <div id="botoes-tarefa">
+                            <button id="sair_visualizacao_tarefa">Sair</button>
+                            <button id="editar_tarefa_bnt">Editar</button>
+                            <button id="excluir_tarefa_bnt">Excluir</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="Todo_list_msg">
+                    <div id="linha_esq"></div>
+                    <h1>TO-DO LIST</h1>
+                    <div id="linha_dir"></div>
+                </div>
+
+                <div id="tarefas-conteiner">
+                </div>
+            </main>
+            <footer id="navegacao_tarefas">
+                <a href="#" id="anterior_bnt"><img src="../imagens/Icones/seta_nav_esquerda.svg"
+                        alt="seta para esquerda">
+                </a>
+                <div id="paginas">
+                    <a href="#" id="pagina_atual" class="selecionado">1</a>
+                    <a href="#" id="pagina_seguinte">2</a>
+                    <a href="#" id="separador">...</a>
+                    <a href="#" id="total_paginas">3</a>
+                </div>
+                <a href="#" id="proximo_bnt"><img src="../imagens/Icones/seta_nav_direita.svg" alt="seta para direita">
+                </a>
+
+            </footer>
+
+            <template id="template-tarefa">
+                <div class="tarefa">
+                    <input type="checkbox" id="concluir_tarefa_checkbox" alt="simbolo de check">
+                    <div class="tarefa-content">
+                        <p id="titulo_tarefa">Task 1</p>
+                        <p id="descricao_tarefa">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                            Recusandae,
+                            fugit? Eaque sapiente quam qui vitae rerum facilis, sint quo tempore, itaque placeat
+                            dolorem
+                            aliquid. Voluptatum optio amet quo illum autem!</p>
+                        <p id="data_criacao_tarefa">Criada em: 01/01/2021</p>
+                        <p id="data_tarefa" hidden>Data Conclusão: 01/01/2021</p>
+                        <p id="prioridade_tarefa" hidden>Prioridade: 0</p>
+                        <p id="status_tarefa" hidden>Status: Pendente</p>
+                    </div>
+
+                    <div id="botoes_tarefa">
+                        <button id="editar_tarefa_bnt"><img src="../imagens/Icones/alter2-icon.svg"
+                                alt="simbolo de lápis"></button>
+                        <button id="excluir_tarefa_bnt"><img src="../imagens/Icones/lixeira.svg"
+                                alt="simbolo de lixeira"></button>
+                    </div>
+                </div>
+            </template>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
