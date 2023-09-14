@@ -198,23 +198,8 @@ R-
 
 ## 5. Demonstre com Classes os principais tipos de coesão presentes no artigo Acoplamento e Coesão, disponível em https://www.facom.ufu.br/~ronaldooliveira/PDS-2019-1/Aula10-Complemento-AcoplamentoCoesao.pdf
 
+R- 
 ```java
-
-    // Alta Coesão
-    public class Calculadora {
-        public double somar(double a, double b) {
-            return a + b;
-        }
-        public double subtrair(double a, double b) {
-            return a - b;
-        }
-        public double multiplicar(double a, double b) {
-            return a * b;
-        }
-        public double dividir(double a, double b) {
-            return a / b;
-        }
-    }
 
     // Coesão Lógica
 
@@ -363,6 +348,13 @@ R-
         }
     }
     
+    /* 
+      Resumindo cada tipo de coesão e diferenciando-as:
+        * Coesão Lógica: A classe possui uma única responsabilidade, porém, possui vários métodos que realizam a mesma tarefa.
+        * Coesão Temporal: A classe possui uma única responsabilidade, porém, possui vários métodos que realizam a mesma tarefa, porém, em momentos diferentes.
+        * Coesão de Comunicação: A classe possui uma única responsabilidade, porém, possui vários métodos que realizam a mesma tarefa, porém, de formas diferentes.
+        * Coesão Funcional: A classe possui uma única responsabilidade, porém, possui vários métodos que realizam a mesma tarefa, porém, de formas diferentes e com nomes diferentes.
+    */
 ```
 
 ## 6. Explique com suas palavras o que é o acoplamento entre classes.
@@ -376,6 +368,7 @@ R-
 
 ## 7. Crie e exemplifique uma classse com alto acoplamento e refatore-a para ter o acoplamento reduzido.
 
+R-
 ```java
 
     // Alto acoplamento
@@ -454,8 +447,10 @@ R-
 
 <span style="color: grey">
 
-***R- O princípio "Tell, don't ask" mitiga o problema de acoplamento pois ele diz que uma classe não deve perguntar a outra classe sobre seus dados para realizar uma tarefa.*** <br>
-***R- Dessa forma, uma classe não precisa saber como a outra classe faz para realizar uma tarefa, ela apenas precisa saber que a outra classe faz aquela tarefa.*** <br>
+***R- O princípio "Tell, don't ask" mitiga o problema de acoplamento pois ele diz que uma classe *** <br>
+***R- não deve perguntar a outra classe sobre seus dados para realizar uma tarefa.*** <br>
+***R- Dessa forma, uma classe não precisa saber como a outra classe faz para realizar uma tarefa, *** <br>
+***R- ela apenas precisa saber que a outra classe faz aquela tarefa.*** <br>
 
 </span>
 
@@ -500,6 +495,7 @@ R-
 
 ### Crie uma interface interface ou classe abstrata chamada Conteudo que seja implementada tanto por Post quanto por outras classes de conteúdo, como Comentario. Dessa forma, a classe Usuario terá uma lista de Conteudo e pode criar e gerenciar qualquer tipo de conteúdo sem conhecer as implementações específicas.
 
+R- 
 ```java
     abstract public class Conteudo {
         private String conteudo;
@@ -545,6 +541,7 @@ R-
     }
 ```
 
+R-
 ```java
     public enum TipoRelacionamento {
         AMIGO, SEGUIDOR, BLOQUEADO;
@@ -590,6 +587,10 @@ R-
 
 ## 13. Verifique seus repositórios e repositórios públicos e identifique pelo menos 1 problemas de coesão de cada categoria acima listada na questão 5, classifique-os e proponha melhorias.
 
+R- 
+```java
+// coesão lógica
+```
 
 ## 14. Verifique seus repositórios e repositórios públicos e identifique problemas de acoplamento e proponha melhorias.
 
