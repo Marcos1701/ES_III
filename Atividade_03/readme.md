@@ -447,9 +447,9 @@ R-
 
 <span style="color: grey">
 
-***R- O princípio "Tell, don't ask" mitiga o problema de acoplamento pois ele diz que uma classe *** <br>
+***R- O princípio "Tell, don't ask" mitiga o problema de acoplamento pois ele diz que uma classe*** <br>
 ***R- não deve perguntar a outra classe sobre seus dados para realizar uma tarefa.*** <br>
-***R- Dessa forma, uma classe não precisa saber como a outra classe faz para realizar uma tarefa, *** <br>
+***R- Dessa forma, uma classe não precisa saber como a outra classe faz para realizar uma tarefa,*** <br>
 ***R- ela apenas precisa saber que a outra classe faz aquela tarefa.*** <br>
 
 </span>
