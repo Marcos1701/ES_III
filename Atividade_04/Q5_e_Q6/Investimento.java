@@ -33,12 +33,12 @@ public class Investimento implements Auditavel {
     public boolean executar() {
         // Lógica de auditoria para Investimento...
         if (this.getTipo() == TipoInvestimento.RENDA_VARIAVEL) {
-            if (this.getValor() > 10000 || this.getValor() > 5000) {
+            if (this.getValor() > 5000) {
                 return true;
             }
             return false;
         }
-        if (this.getValor() > 100000 || this.getValor() > 50000) {
+        if (this.getValor() > 50000) {
             return true;
         }
         return false;
