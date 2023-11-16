@@ -6,11 +6,9 @@
 
 2. **Qual a principal imagem relacionada ao princípio e qual a explicação sobre ela?** </br>
        
-       A imagem mais comum associada ao Princípio de Substituição de Liskov é a de um quadrado e um retângulo.
-       Embora um quadrado possa parecer um retângulo, se usarmos um quadrado onde um retângulo é esperado (de acordo com a herança),
-       podemos encontrar problemas devido às diferenças nas propriedades dessas formas geométricas. Por exemplo, se um retângulo tem um método
-       "setAltura" e um método "setLargura", um quadrado não pode ter esses métodos, pois a altura e a largura de um quadrado são sempre iguais.
-       Portanto, se usarmos um quadrado onde um retângulo é esperado, podemos encontrar problemas devido às diferenças nas propriedades dessas formas geométricas.
+       A imagem mais comum associada ao Princípio de Substituição de Liskov é a de um pato real e um pato de borracha.
+       "Se parece com um pato, grasna como um pato, mas precisa de baterias — Provavelmente você está usando a abstração de forma incorreta".
+       De forma geral, a violação acontece quando você espera que a instância de uma classe base possa ser substituída por uma instância da classe derivada sem afetar o comportamento do programa de maneira indesejada.
 
 4. **Cite um exemplo onde a herança pode ser usada de forma conveniente, porém deixa uma impressão de que está sendo mal aplicada.** </br>
    
