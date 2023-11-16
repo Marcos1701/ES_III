@@ -1,16 +1,15 @@
 package ES_III.Atividade_04.Q5_e_Q6;
 
-import ES_III.Atividade_04.Q5_e_Q6.AuditoriaFinanceiraService.Auditavel;
 
 enum TipoTransacao {
     CREDITO, DEBITO
 }
 
-public class Transacao implements Auditavel {
+public class Transacao{
     private int id;
     private double valor;
     private TipoTransacao tipo;
-    private TransacaoService service = new TransacaoService();
+    private TransacaoService service = new TransacaoService(this);
 
     public Transacao(int id, double valor, TipoTransacao tipo) {
         this.id = id;
@@ -19,14 +18,7 @@ public class Transacao implements Auditavel {
     }
 
     public boolean verificarFraude() {
-        return service.verificarFraude(this);
-    }
-
-    public boolean executar() {
-        if (this.verificarFraude()) {
-            return true;
-        }
-        return false;
+        return service.verificarFraude();
     }
 
     public int getId() {
