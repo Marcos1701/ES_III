@@ -19,4 +19,3 @@
 5. **Nos exemplos que você citou, a composição seria mais aplicável? Refaça-os.** </br>
    
        Sim, a composição seria mais aplicável. Em vez de ter "Pinguim" herdar de "Pássaro", poderíamos ter uma classe "Animal" com subclasses "Pássaro Voador" e "Pássaro Não-Voador", ou poderíamos ter uma classe "Habilidade de Voo" que poderia ser composta em classes de animais conforme necessário.
-
