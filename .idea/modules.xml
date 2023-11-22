@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Atividade_02/Antes/Antes.iml" filepath="$PROJECT_DIR$/Atividade_02/Antes/Antes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Atividade_04/Atividade_04.iml" filepath="$PROJECT_DIR$/Atividade_04/Atividade_04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Atividade_Java_01/Atividade_Java_01.iml" filepath="$PROJECT_DIR$/Atividade_Java_01/Atividade_Java_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Atividade_Liskov/Atividade_Liskov.iml" filepath="$PROJECT_DIR$/Atividade_Liskov/Atividade_Liskov.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Atividade_02/Depois/Depois.iml" filepath="$PROJECT_DIR$/Atividade_02/Depois/Depois.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ES_III.iml" filepath="$PROJECT_DIR$/ES_III.iml" />
+    </modules>
+  </component>
+</project>
