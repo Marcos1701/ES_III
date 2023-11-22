@@ -1,4 +1,4 @@
-### 5. As classes Postagem, Reacao e Comentario possuem uma herança apenas para aproveitar alguns atributos e reescrever o método exibir().
+### 5°) As classes Postagem, Reacao e Comentario possuem uma herança apenas para aproveitar alguns atributos e reescrever o método exibir().
 
 ```java
 public class Perfil {

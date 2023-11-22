@@ -1,4 +1,4 @@
-### Proponha uma solução que evite o uso da herança no código abaixo:
+### 2°) Proponha uma solução que evite o uso da herança no código abaixo:
 
 
 ```java

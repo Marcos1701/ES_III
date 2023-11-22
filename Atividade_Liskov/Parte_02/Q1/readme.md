@@ -1,4 +1,4 @@
-### 1. Em um sistema bancário temos as seguintes classes:
+### 1°) Em um sistema bancário temos as seguintes classes:
 
 ``` java
 public class ContaBancaria {
