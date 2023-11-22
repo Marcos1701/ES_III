@@ -1,5 +1,4 @@
-### 3. Aplique o princípio LSP à implementação abaixo de forma que persistência seja um atributo da
-### segunda classe. Crie um exemplo real com o resultado da refatoração.
+### 3. Aplique o princípio LSP à implementação abaixo de forma que persistência seja um atributo da segunda classe. Crie um exemplo real com o resultado da refatoração.
 
 ```java
 import java.io.*;

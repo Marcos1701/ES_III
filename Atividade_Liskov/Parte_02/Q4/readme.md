@@ -1,9 +1,9 @@
 ### 4. Entenda o problema da herança entre patos e suas capacidades presentes no exemplo do link:
-
 https://www.quora.com/What-are-some-Java-examples-for-the-OOP-principle-of-favoring-object-composition-over-inheritance
-
 ### Proponha um exemplo que também viola o LISP e exiba sua solução.
 
+
+### Exemplo de problema:
 ```java
 // comparar carro com carro de brinquedo
 public class Carro {
@@ -34,8 +34,8 @@ public class Carro {
     }
 }
 
-public class CarroDeComtroleRemoto extends Carro { // carro de brinquedo
-    public CarroDeComtroleRemoto(String cor, String modelo, int ano) {
+public class CarroDeControleRemoto extends Carro { // carro de brinquedo
+    public CarroDeControleRemoto(String cor, String modelo, int ano) {
         super(cor, modelo, ano);
     }
 
@@ -51,7 +51,7 @@ public class CarroDeComtroleRemoto extends Carro { // carro de brinquedo
 }
 ```
 
-### Solução:
+### Solução para o problema:
 
 ```java
 public class Carro {
@@ -82,10 +82,10 @@ public class Carro {
     }
 }
 
-public class CarroDeComtroleRemoto {
+public class CarroDeControleRemoto {
     private Carro carro;
 
-    public CarroDeComtroleRemoto(String cor, String modelo, int ano) {
+    public CarroDeControleRemoto(String cor, String modelo, int ano) {
         this.carro = new Carro(cor, modelo, ano);
     }
 
