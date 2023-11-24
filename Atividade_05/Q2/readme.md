@@ -7,4 +7,3 @@
 <p style="margin-left: 10px;"> &#9989; Facilita a manutenção e evolução do sistema; </p>
 <p style="margin-left: 10px;"> &#9989; Promove a reutilização de componentes de interface em diferentes contextos; </p>
 <p style="margin-left: 10px;"> &#9989; Evita que uma classe seja forçada a implementar métodos que não serão utilizados; </p>
-<p style="margin-left: 10px;"> &#9989; Evita que uma classe seja forçada a implementar métodos que não fazem sentido para ela. </p>
