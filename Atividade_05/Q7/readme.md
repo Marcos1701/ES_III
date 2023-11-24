@@ -1,0 +1,3 @@
+### 7. Cite um exemplo em que uma mudança em uma dependência, por exemplo, banco de dados, ou mecanismo de autenticação ou conexão via sockets poderia impactar uma implementação de outros módulos.
+
+> Um exemplo seria a implementação de um sistema de compras online. Se o sistema for implementado de forma a depender de uma classe concreta que implementa a interface `Pagamento`, por exemplo, e essa classe concreta for alterada, o sistema inteiro será impactado. Porém, se o sistema for implementado de forma a depender apenas da interface `Pagamento`, e essa interface for implementada por classes concretas, o sistema não será impactado, pois a interface não foi alterada.</br> </br>
